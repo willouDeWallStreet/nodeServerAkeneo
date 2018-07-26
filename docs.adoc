@@ -1,0 +1,38 @@
+:icons: font
+
+= Akeneo Node Services icon:angellist[]
+
+== Sommaire
+
+* <<intro>>
+* <<testListProducts>>
+* <<toBeContinued>>
+
+
+[[intro]]
+== Introduction
+
+Ces tests sont une première approche de la mise en place d'un serveur NodeJS. Ce serveur NodeJS doit fournir les services de l'API d'Akeneo aux applications, telles que M-Ticket, le site WEB, ... Ces tests sont effectués sur la machine de de qualif (10.10.12.245) et le serveur NodeJS se trouve sur la machine ...
+
+
+[[testListProducts]]
+== Test M-ticket Products List
+
+=== Contexte
+
+Lors de ce première test, on GET les produits nécessaire pour M-Ticket, avec les champs nécessaires. Cela est fait sur la route /products?scope=mobile.
+
+=== Code
+
+On fait un POST les informations de connexion sur 10.10.12.245 pour avoir un token valide. Ensuite, avec un pipe on fait un GET sur l'URL suivante : + 
+http://10.10.12.245/api/rest/v1/products?scope=mobile?attributes=description,label_svd,price,vat + 
+Cette URL permet d'avoir tous les produits du canal "M-ticket" avec les attributs souhaités (le label SVD du produit, sa description, son prix, ...).
+
+=== icon:child[]
+
+
+[[toBeContinued]]
+== To be continued
+
+=== Autres services
+
